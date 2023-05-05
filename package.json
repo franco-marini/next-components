@@ -6,17 +6,43 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "type-check": "tsc --noEmit",
+    "lint": "eslint \"./**/*.{ts,tsx,test.ts,test.tsx}\" && stylelint \"./src/**/*.css\"",
+    "format": "prettier --write './**/*.{ts,tsx,test.ts,test.tsx}' --config ./.prettierrc",
+    "lint:fix": "eslint --fix \"./**/*.{ts,tsx,test.ts,test.tsx}\" && stylelint \"./src/**/*.css\" --fix && yarn format",
+    "pre-commit": "yarn type-check && yarn lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@types/node": "18.16.3",
     "@types/react": "18.2.5",
     "@types/react-dom": "18.2.3",
     "eslint": "8.39.0",
-    "eslint-config-next": "13.4.0",
-    "next": "13.4.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "eslint-config-next": "^13.4.1",
+    "next": "^13.4.1",
+    "react": "^18.2.0",
+    "react-aria": "^3.24.0",
+    "react-dom": "^18.2.0",
+    "react-stately": "^3.22.0",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.8",
+    "@storybook/addon-interactions": "^7.0.8",
+    "@storybook/addon-links": "^7.0.8",
+    "@storybook/blocks": "^7.0.8",
+    "@storybook/nextjs": "^7.0.8",
+    "@storybook/react": "^7.0.8",
+    "@storybook/testing-library": "^0.0.14-next.2",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-storybook": "^0.6.12",
+    "storybook": "^7.0.8",
+    "stylelint": "^14.11.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-standard": "^28.0.0",
+    "stylelint-prettier": "^2.0.0"
   }
 }
