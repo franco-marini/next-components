@@ -32,6 +32,10 @@
       "error",
       { "ObjectExpression": { "multiline": true, "minProperties": 1 } }
     ],
+    "no-unused-vars": [
+      "warn",
+      { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }
+    ],
     "no-duplicate-imports": "error",
     "simple-import-sort/exports": "error"
   }
