@@ -1,0 +1,37 @@
+html {
+  /* Convert rem to 10px */
+  font-size: 62.5%;
+}
+
+body {
+  display: block;
+  background-color: #fafafa;
+  margin: 0px;
+}
+
+h1 {
+  /* 24px */
+  font-size: 2.4rem;
+}
+
+h2 {
+  /* 20px */
+  font-size: 2rem;
+}
+
+h3 {
+  /* 18px */
+  font-size: 1.8rem;
+}
+
+h4 {
+  /* 16px */
+  font-size: 1.6rem;
+}
+
+p,
+li,
+span {
+  /* 16px */
+  font-size: 1.6rem;
+}
