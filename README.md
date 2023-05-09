@@ -21,7 +21,76 @@ In the project directory, you can run:
 - Run `yarn lint:fix` to fix all the lint issues and format with eslint.
 - Run `yarn storybook` to run the storybook.
 
-## Learn More
+## Basic structure and configurations
+
+Before read the structure, please read the following [Server components](https://nextjs.org/docs/getting-started/react-essentials#server-components).
+
+```
+src/                    // Container to other folders with the source code of the app
+  app/
+    layout.tsx          // Root layout for all the pages
+    page.tsx            // Main page of the app
+    main.css            // Styles applied to the layout
+    styles.ts           // Styled components used on the main page
+  components/
+    client/             // Components that use the tags 'use client'
+      providers/        // Providers components e.g. ThemeProvider, ReduxProvider, ContextProvider
+        index.tsx       // Provider component to include all providers
+      ui/               // Components that are being used on the pages or server components
+    server/             // Components that are static
+  config/               // Configuration files
+  constants/            // Global constants
+  lib/
+  interfaces/           // Global interfaces
+  types/                // Declaration types for typescript
+  utils/                // Reusable functions
+.env                    // Environment variables
+package.json            // Deps and workspace scripts
+tsconfig.json           // Typescript configuration
+README.md               // Docs are important!
+```
+
+## Web
+
+### Page structure
+
+Before read this section, please read the following [Defining Routes](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) to understand a base for creating routes.
+
+Each Page must follow the next structure and the name of it must be in `kebab-case`:
+
+```
+src/
+  app/
+    layout.tsx
+    page.tsx
+    styles.ts
+    example-route/
+                        // If there is no layout it will apply the layout from `app/layout.tsx`.
+      page.tsx          // This page should be access with the url: /example-route
+      styles.ts
+```
+
+### Component structure
+
+Each component must follow the next structure and the name of it must be in `kebab-case`:
+
+```
+src/
+  ...
+  components/
+    ...                     // Can be on the client or server directory
+      example/              // Name of the component
+        example.stories.ts  // File read by storybook
+        index.tsx           // Component logic
+        styles.ts           // Styled components
+        types.ts            // Types used only on this component
+```
+
+## Server
+
+### WIP
+
+## Learn More about Next.js
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -29,32 +98,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-## Basic structure and configurations
-
-```
-src/                  // Container to other folders with the source code of the app
-  app/
-    layout/           // layout for the different pages
-    pages/            // page components
-      index.ts        // export all the page components
-  shared/           // components that are being used on the entire app
-    common/         // app components
-      index.ts      // export all app components
-    ui/             // atomic components
-      index.ts      // export all atomic components
-  config/             // configuration files
-  constants/          // global constants
-  interfaces/         // global interfaces
-  utils/              // reusable functions
-.env                  // environment variables
-package.json          // deps and workspace scripts
-tsconfig.json         // typescript configuration
-README.md             // docs are important
-```
