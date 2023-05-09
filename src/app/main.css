@@ -1,6 +1,7 @@
 html {
   /* Convert rem to 10px */
   font-size: 62.5%;
+  color: #1f1f1f;
 }
 
 body {

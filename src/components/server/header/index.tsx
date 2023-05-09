@@ -1,17 +1,28 @@
 import React from 'react'
 
-import { SHeader, SLogo } from './styles'
+import * as S from './styles'
+import { HeaderProps } from './types'
 
-function Header() {
+function Header({ user }: HeaderProps) {
   return (
-    <SHeader>
-      <SLogo>
-        <h1>Fostering pet</h1>
-      </SLogo>
-      <span>
-        Welcome, <b>Titi</b>!
-      </span>
-    </SHeader>
+    <S.Header>
+      <S.LogoDiv>
+        <h1>
+          FOSTERING <span>PETs</span>
+        </h1>
+      </S.LogoDiv>
+      {user.firstName !== '' ? (
+        <span>
+          Welcome,{' '}
+          <b>
+            {user.firstName} {user.lastName}
+          </b>
+          !
+        </span>
+      ) : (
+        <></>
+      )}
+    </S.Header>
   )
 }
 

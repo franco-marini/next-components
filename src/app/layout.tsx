@@ -1,16 +1,12 @@
 import './main.css'
-import { Inter } from 'next/font/google'
 
 import Providers from '@/components/client/providers'
-
-const inter = Inter({
-  subsets: ['latin'],
-})
+import { fonts } from '@/constants/fonts'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={fonts.inter.className}>
         <Providers>{children}</Providers>
       </body>
     </html>

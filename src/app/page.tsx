@@ -1,9 +1,16 @@
 import Header from '@/components/server/header'
 
+import * as S from './styles'
+
 export default function Home() {
   return (
-    <main>
-      <Header />
-    </main>
+    <S.Main>
+      <Header
+        user={{
+          firstName: 'Franco',
+          lastName: 'Marini',
+        }}
+      />
+    </S.Main>
   )
 }

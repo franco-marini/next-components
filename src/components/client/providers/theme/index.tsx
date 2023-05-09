@@ -2,8 +2,8 @@
 
 import { ThemeProvider } from 'styled-components'
 
-import theme from '@/constants/theme'
+import * as theme from '@/constants/theme'
 
 export default function StyledThemeProvider({ children }: { children: React.ReactNode }) {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>
+  return <ThemeProvider theme={theme.darkTheme}>{children}</ThemeProvider>
 }

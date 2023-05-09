@@ -19,9 +19,17 @@ type Story = StoryObj<typeof Header>
 export const LoggedIn: Story = {
   args: {
     user: {
-      name: 'Jane Doe',
+      firstName: 'Jane',
+      lastName: 'Doe',
     },
   },
 }
 
-export const LoggedOut: Story = {}
+export const LoggedOut: Story = {
+  args: {
+    user: {
+      firstName: '',
+      lastName: '',
+    },
+  },
+}
