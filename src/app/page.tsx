@@ -1,3 +1,4 @@
+import { TextField } from '@/components/client/ui/inputs/text-field'
 import Header from '@/components/server/header'
 
 import * as S from './styles'
@@ -11,6 +12,8 @@ export default function Home() {
           lastName: 'Marini',
         }}
       />
+
+      <TextField label="Email" name="email" />
     </S.Main>
   )
 }

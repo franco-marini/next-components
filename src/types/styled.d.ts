@@ -30,6 +30,11 @@ declare module 'styled-components' {
       background: ColorScheme
       font: ColorScheme
       shadow: ColorScheme
+      subtext: ColorScheme
+      white: ColorScheme
+      black: ColorScheme
+      error: ColorScheme
+      success: ColorScheme
     }
   }
 }

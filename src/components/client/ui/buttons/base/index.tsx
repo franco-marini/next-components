@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React from 'react'
 import { useButton } from 'react-aria'
 
 import * as S from './styles'
@@ -13,7 +13,7 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
-  const ref = useRef<HTMLButtonElement>(null)
+  const ref = React.useRef<HTMLButtonElement>(null)
   const { buttonProps } = useButton(props, ref)
 
   return (

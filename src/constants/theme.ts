@@ -35,12 +35,18 @@ export const lightTheme: DefaultTheme = {
     background: '#FAFAFA',
     font: '#1F1F1F',
     shadow: '#0F0F0F3A',
+    subtext: '#B0B0B0',
+    black: '#1F1F1F',
+    white: '#FAFAFA',
+    error: '#D32F2F',
+    success: '#2E7D32',
   },
 }
 
 export const darkTheme: DefaultTheme = {
   ...lightTheme,
   colors: {
+    ...lightTheme.colors,
     primary: '#40A3C2',
     secondary: '#58D5D1',
     background: '#333333',
@@ -84,10 +90,17 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 1.6rem;
   }
 
+  input {
+    /* 18px */
+    font-size: 1.8rem;
+  }
+
   p,
   li,
-  span {
+  span,
+  label, div {
     /* 16px */
     font-size: 1.6rem;
   }
+
 `

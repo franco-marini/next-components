@@ -32,7 +32,8 @@ h4 {
 
 p,
 li,
-span {
+span,
+input {
   /* 16px */
   font-size: 1.6rem;
 }
