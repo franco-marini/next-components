@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { ChangeEvent, useRef, useState } from 'react'
 import { useTextField } from 'react-aria'
 
 import { ErrorMessage, Subtext } from '../../texts'
@@ -12,11 +12,17 @@ export function TextField(props: TextFieldProps) {
   const { variant = 'standard', label, placeholder } = props
   const ref = useRef<HTMLInputElement>(null)
   const { labelProps, inputProps, descriptionProps, errorMessageProps } = useTextField(props, ref)
+  const [isActive, setIsActive] = useState<boolean>(false)
+
+  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    inputProps.onChange?.(e)
+    setIsActive(e.target.value !== '')
+  }
 
   return (
     <S.Container variant={variant}>
-      <S.Input {...inputProps} ref={ref} variant={variant} />
-      <S.InputLabel {...labelProps} active={ref.current?.value !== ''} color="primary">
+      <S.Input {...inputProps} ref={ref} variant={variant} onChange={handleOnChange} />
+      <S.InputLabel {...labelProps} active={isActive} color="primary">
         {label || placeholder}
       </S.InputLabel>
       {props.description && <Subtext {...descriptionProps}>{props.description}</Subtext>}

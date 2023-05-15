@@ -8,10 +8,6 @@ export const variants = {
     container: css<StyledTextFieldProps>``,
     input: css<StyledTextFieldProps>``,
   },
-  outlined: {
-    container: css<StyledTextFieldProps>``,
-    input: css<StyledTextFieldProps>``,
-  },
 }
 
 export const Container = styled.div<StyledTextFieldProps>`
