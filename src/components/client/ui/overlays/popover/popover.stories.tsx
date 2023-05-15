@@ -4,6 +4,7 @@ import { OverlayTriggerProps, useOverlayTriggerState } from 'react-stately'
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Button } from '../../buttons/base'
+import { Dialog } from '../dialog'
 import { Popover } from '.'
 
 function PopoverTrigger(props: OverlayTriggerProps) {
@@ -22,10 +23,12 @@ function PopoverTrigger(props: OverlayTriggerProps) {
       <Button {...triggerProps} ref={ref} label="Open Popover" />
       {state.isOpen && (
         <Popover {...props} triggerRef={ref} state={state}>
-          {
-            // TO-DO: Use a custom dialog component
-            cloneElement(<div>This is the content of the popover.</div>, overlayProps)
-          }
+          {cloneElement(
+            <Dialog title="Popover dialog">
+              This is the content of the popover inside a dialog.
+            </Dialog>,
+            overlayProps,
+          )}
         </Popover>
       )}
     </>
