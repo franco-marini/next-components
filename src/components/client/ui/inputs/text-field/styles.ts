@@ -34,6 +34,16 @@ export const Input = styled.input<StyledTextFieldProps>`
     border-bottom: 2px solid ${(props) => props.theme.colors.primary};
   }
 
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
+
   ${(props) => variants[props.variant].input}
 `
 

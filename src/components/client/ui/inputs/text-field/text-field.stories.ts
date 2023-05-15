@@ -20,6 +20,7 @@ export const Base: Story = {
     label: 'Label',
     name: 'email',
     id: 'email',
+    type: 'number',
     placeholder: 'Placeholder',
     description: 'Sub text',
     errorMessage: 'Error message',
