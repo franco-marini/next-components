@@ -12,6 +12,8 @@ export interface StyledButtonProps {
   color: Color
 }
 
-export interface ButtonProps extends AriaButtonProps<React.ElementType>, StyledButtonProps {
+export interface ButtonProps
+  extends AriaButtonProps<React.ElementType>,
+    Partial<StyledButtonProps> {
   label: string
 }
