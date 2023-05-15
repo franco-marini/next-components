@@ -18,7 +18,7 @@ export const Container = styled.div<StyledTextFieldProps>`
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-top: 14px;
+  margin-top: 16px;
   ${(props) => variants[props.variant].container};
 `
 

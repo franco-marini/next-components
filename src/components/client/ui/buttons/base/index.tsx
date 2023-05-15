@@ -7,12 +7,8 @@ import * as S from './styles'
 import { ButtonProps } from './types'
 
 /** This is the primary component of the UI library */
-export const Button = ({
-  variant = 'contained',
-  color = 'primary',
-  label,
-  ...props
-}: ButtonProps) => {
+export const Button = (props: ButtonProps) => {
+  const { variant = 'contained', color = 'primary', label } = props
   const ref = React.useRef<HTMLButtonElement>(null)
   const { buttonProps } = useButton(props, ref)
 
