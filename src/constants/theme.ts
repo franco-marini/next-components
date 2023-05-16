@@ -36,6 +36,7 @@ export const lightTheme: DefaultTheme = {
     font: '#1F1F1F',
     shadow: '#0F0F0F3A',
     subtext: '#B0B0B0',
+    disabled: '#4A4A4A',
     black: '#1F1F1F',
     white: '#FAFAFA',
     error: '#D32F2F',
@@ -52,6 +53,7 @@ export const darkTheme: DefaultTheme = {
     background: '#333333',
     font: '#FAFAFA',
     shadow: '#FAFAFA1F',
+    disabled: '#B5B5B5',
   },
 }
 

@@ -4,7 +4,7 @@ import { StyledTextColor } from './types'
 
 export const Label = styled.label<StyledTextColor>`
   font-size: 1.4rem;
-  color: ${(props) => props.theme.colors[props.color]};
+  color: ${(props) => props.theme.colors[props.color ? props.color : 'font']};
 `
 
 export const Subtext = styled.span`

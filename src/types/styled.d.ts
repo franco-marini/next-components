@@ -35,6 +35,7 @@ declare module 'styled-components' {
       black: ColorScheme
       error: ColorScheme
       success: ColorScheme
+      disabled: ColorScheme
     }
   }
 }
